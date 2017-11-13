@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+    <form th:action="@{/{act}(act=${action})}" th:method="${method}" th:object="${userDto}">
+        <input type="hidden" th:field="*{id}"/>
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name" />
+        <label for="birthDate">Birth Date</label>
+        <input type="date" th:field="*{birthDate}" id="birthDate"/>
+        <input type="submit" th:value="${action}"/>
+    </form>
+
+</body>
+</html>
